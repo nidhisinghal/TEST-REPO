@@ -1,0 +1,30 @@
+name: ViewStub-QA
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Select the environment
+        required: true
+        default: 'test'
+        options:
+        - dev
+        - test
+      browser:
+        type: choice
+        description: chooose the browser
+        required: true
+        default: 'chrome'
+        options:
+        - chrome
+        - firefox
+        - edge
+      test-report:
+        description: name of html test report file
+        required: false
+        default: 'test_run_report.html'
+      test-to-run:
+        description: Specify the tests to be run
+        required: false
+        default: ''
